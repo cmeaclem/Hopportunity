@@ -1,0 +1,15 @@
+{
+  "name": "hopportunity",
+  "version": "1.0.0",
+  "description": "## Background",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Chris Meaclem",
+  "license": "ISC",
+  "dependencies": {
+    "react-native": "^0.75.4"
+  }
+}
