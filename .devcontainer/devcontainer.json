@@ -1,13 +1,16 @@
 {
-"name": "React Native Dev Container",
-"dockerFile": "Dockerfile",
-"context": "..",
-"settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-},
-"mounts": [
-    "source=/dev/bus/usb,target=/dev/bus/usb,type=bind"
-],
-"forwardPorts": [19000, 8081],
-"postCreateCommand": "npm install",
+    "name": "React Native Dev Container",
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "mounts": [
+        "source=/dev/bus/usb,target=/dev/bus/usb,type=bind"
+    ],
+    "postCreateCommand": "npm install",
+    "runArgs": [
+        "--privileged",
+        "--network=host"
+    ]
 }

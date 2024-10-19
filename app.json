@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Hopportunity",
+    "slug": "Hopportunity",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/kangaroo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/kangaroo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.meaclem.hopportunity",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/kangaroo.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/kangaroo.png"
+    }
+  }
+}
