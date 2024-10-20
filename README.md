@@ -11,6 +11,30 @@ React Native also provides me with an opportunity to learn React, which is a val
 
 More about the algorithm used to detect jumps can be found [here](./algorithm.md)
 
+### Variations from the specifications
+
+I made the following variations from the provided specifications:
+
+> displays the duration of the last performed jump.
+
+Additionally I added:
+* A horizontal displacement metric
+
+   This allows the user to see how far they have moved horizontally during the jump.
+   This can be useful is two cases:
+   1. When the user is performing "standing jumps", this field provides feedback on to coach on undesired lateral movement.
+   2. When the user is performing "broad jumps", this field provides feedback on the distance covered.
+
+* A jump height metric
+
+   This metric is useful for the user to track their progress in jump height over time. For example, a user may want to see how their jump height changes over time as they improve their strength and technique (e.g. Basketball, Volleyball, ...).
+
+
+> a start button press **resetting** the displayed count and duration values.
+Additionally, I added a Stop button to stop the jump detection and keep the results from the previous session on the screen.
+This allows the user to review their results after a session without losing them, or cause false positives in the jump detection algorithm.
+
+
 ## Developing
 
 **Conventions:**
@@ -66,7 +90,11 @@ First **Connect an Android Device** (or use an emulator):
 
 - Make sure **USB Debugging** is enabled on your Android device.
 - Connect your Android device to your computer via USB.
-- If using an emulator, start it.
+- If using an emulator, start it from the host machine (the DevContainer can reach it).
+- Make sure that you've installed Expo Go on your device.
+
+Then run `make run` to deploy.
+When prompted, press `a` to deploy to an Android device.
 
 **Troubleshooting:**
 
