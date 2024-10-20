@@ -11,6 +11,9 @@ React Native also provides me with an opportunity to learn React, which is a val
 
 ## Developing
 
+**Conventions:**
+- Units, unless otherwise specified, are SI units.
+
 **Requirements:**
 - Docker installed on your machine.
 - [Recomended] VSCode

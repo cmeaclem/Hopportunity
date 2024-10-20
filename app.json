@@ -19,7 +19,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/kangaroo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.HIGH_SAMPLING_RATE_SENSORS"
+      ]
     },
     "web": {
       "favicon": "./assets/kangaroo.png"

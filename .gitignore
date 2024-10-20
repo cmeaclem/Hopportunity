@@ -6,3 +6,6 @@ package-lock.json
 .expo/
 dist/
 web-build/
+
+# Misc
+*.swp
