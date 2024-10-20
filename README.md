@@ -9,6 +9,8 @@ With React Native, I can leverage Expo Go, which simplifies testing on physical 
 Additionally, I only have Android devices in my household, which makes it more convenient to test using React Native's robust Android tooling.
 React Native also provides me with an opportunity to learn React, which is a valuable framework for both mobile and web development.
 
+More about the algorithm used to detect jumps can be found [here](./algorithm.md)
+
 ## Developing
 
 **Conventions:**

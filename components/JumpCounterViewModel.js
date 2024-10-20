@@ -3,15 +3,22 @@ import { Accelerometer } from 'expo-sensors';
 import { JumpDetector } from './JumpDetector';
 import { JumpMetrics } from './JumpMetrics';
 
+/**
+ * Custom hook to manage jump counting and monitoring.
+ * @returns {Object} - The jump metrics, monitoring state, and control functions.
+ */
 export const useJumpCounterViewModel = () => {
   const [jumpMetrics, setJumpMetrics] = useState(new JumpMetrics());
   const [isMonitoring, setIsMonitoring] = useState(false);
   const isMonitoringRef = useRef(isMonitoring);
   let subscription;
 
+  /**
+   * Starts monitoring accelerometer data for jump detection.
+   */
   const startMonitoring = () => {
     if (isMonitoringRef.current) {
-      console.log('Already monitoring');
+      console.debug('Already monitoring');
       return;
     }
 
@@ -19,14 +26,12 @@ export const useJumpCounterViewModel = () => {
     isMonitoringRef.current = true;
     setIsMonitoring(true);
 
-    console.log('Start monitoring');
-
     Accelerometer.setUpdateInterval(10);
     subscription = Accelerometer.addListener(({ x, y, z }) => {
       if (!isMonitoringRef.current) return;
 
       let timestamp_s = Date.now() / 1000;
-      console.log(
+      console.debug(
         `Accelerometer data - t: ${timestamp_s}, x: ${x}, y: ${y}, z: ${z}`
       );
       jumpDetector.pushSensorData({ timestamp_s, x, y, z });
@@ -36,13 +41,13 @@ export const useJumpCounterViewModel = () => {
     });
   };
 
+  /**
+   * Stops monitoring accelerometer data.
+   */
   const stopMonitoring = () => {
     if (subscription) {
       subscription.remove();
-      subscription = null;
     }
-    // Remove all listeners, just to be safe
-    Accelerometer.removeAllListeners();
     isMonitoringRef.current = false;
     setIsMonitoring(false);
   };

@@ -1,5 +1,8 @@
 import { JumpMetrics } from './JumpMetrics';
 
+/**
+ * Class to detect jumps from accelerometer data.
+ */
 export class JumpDetector {
   constructor() {
     this.jumpMetrics = new JumpMetrics();
@@ -62,7 +65,7 @@ export class JumpDetector {
     const a_total_i = Math.sqrt(a_i[0] ** 2 + a_i[1] ** 2 + a_i[2] ** 2);
 
     // For debugging: Log the total acceleration
-    console.log(`Total Acceleration: ${a_total_i.toFixed(2)} m/s²`);
+    console.debug(`Total Acceleration: ${a_total_i.toFixed(2)} m/s²`);
 
     // Jump detection logic
     if (a_total_i < this.A_MIN && this.previousState === 'grounded') {
