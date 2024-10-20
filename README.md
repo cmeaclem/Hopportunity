@@ -31,6 +31,7 @@ Additionally I added:
 
 
 > a start button press **resetting** the displayed count and duration values.
+
 Additionally, I added a Stop button to stop the jump detection and keep the results from the previous session on the screen.
 This allows the user to review their results after a session without losing them, or cause false positives in the jump detection algorithm.
 
