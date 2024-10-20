@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet} from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import { useJumpCounterViewModel } from './JumpCounterViewModel';
 
 const JumpCounterApp = () => {
-  const { jumpMetrics, isMonitoring, startMonitoring, stopMonitoring } = useJumpCounterViewModel();
+  const { jumpMetrics, isMonitoring, startMonitoring, stopMonitoring } =
+    useJumpCounterViewModel();
 
   return (
     <View style={styles.container}>
@@ -14,12 +15,19 @@ const JumpCounterApp = () => {
       <Text style={styles.value}>{jumpMetrics.duration_s * 1000}</Text>
 
       <Text style={styles.label}>Last Jump Horizontal (m):</Text>
-      <Text style={styles.value}>{jumpMetrics.horizontalDisplacement_m.toFixed(3)}</Text>
+      <Text style={styles.value}>
+        {jumpMetrics.horizontalDisplacement_m.toFixed(3)}
+      </Text>
 
       <Text style={styles.label}>Last Jump Height (m):</Text>
-      <Text style={styles.value}>{jumpMetrics.verticalDisplacement_m.toFixed(3)}</Text>
+      <Text style={styles.value}>
+        {jumpMetrics.verticalDisplacement_m.toFixed(3)}
+      </Text>
 
-      <Button onPress={isMonitoring ? stopMonitoring : startMonitoring} title={isMonitoring ? 'Stop Monitoring' : 'Start Monitoring'} />
+      <Button
+        onPress={isMonitoring ? stopMonitoring : startMonitoring}
+        title={isMonitoring ? 'Stop Monitoring' : 'Start Monitoring'}
+      />
     </View>
   );
 };

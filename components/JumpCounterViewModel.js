@@ -24,9 +24,11 @@ export const useJumpCounterViewModel = () => {
     Accelerometer.setUpdateInterval(10);
     subscription = Accelerometer.addListener(({ x, y, z }) => {
       if (!isMonitoringRef.current) return;
-    
-      timestamp_s = Date.now() / 1000;
-      console.log(`Accelerometer data - t: ${timestamp_s}, x: ${x}, y: ${y}, z: ${z}`);
+
+      let timestamp_s = Date.now() / 1000;
+      console.log(
+        `Accelerometer data - t: ${timestamp_s}, x: ${x}, y: ${y}, z: ${z}`
+      );
       jumpDetector.pushSensorData({ timestamp_s, x, y, z });
 
       // Update UI with the latest jump metrics
