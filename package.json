@@ -12,6 +12,6 @@
   "dependencies": {
     "expo": "^51.0.38",
     "expo-sensors": "^13.0.9",
-    "react-native": "^0.75.4"
+    "react-native": "^0.74.5"
   }
 }
