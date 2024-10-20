@@ -12,7 +12,7 @@ const JumpCounterApp = () => {
       <Text style={styles.value}>{jumpMetrics.jumpCount}</Text>
 
       <Text style={styles.label}>Last Jump Duration (ms):</Text>
-      <Text style={styles.value}>{jumpMetrics.duration_s * 1000}</Text>
+      <Text style={styles.value}>{(jumpMetrics.duration_s * 1000).toFixed(0)}</Text>
 
       <Text style={styles.label}>Last Jump Horizontal (m):</Text>
       <Text style={styles.value}>
