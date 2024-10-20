@@ -33,3 +33,7 @@ test:
 .PHONY: ci  ## Run the CI "pipeline"
 ci: lint test
 	@echo "CI pipeline completed successfully"
+
+.PHONY: deplopy  ## Deploy the app
+deploy:
+	npx expo run:android --variant release

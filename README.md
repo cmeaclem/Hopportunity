@@ -5,9 +5,9 @@ NB: All instructions in this README assume Linux (specifically Ubuntu 22.04).
 ## Background
 
 I chose React Native over Flutter for this project due to its flexibility in development and ease of testing on iOS devices.
-With React Native, I can leverage Expo Go, which simplifies testing on physical iPhones without the need for building and deploying an entire iOS build each time.
+With React Native, I can leverage Expo Go, which simplifies testing on devices without the need for building and deploying an entire build each time.
 Additionally, I only have Android devices in my household, which makes it more convenient to test using React Native's robust Android tooling.
-React Native also provides me with an opportunity to learn React, which is a valuable framework for both mobile and web development.
+React Native also provides me with an opportunity to learn more about React, which is a valuable framework for both mobile and web development.
 
 More about the algorithm used to detect jumps can be found [here](./algorithm.md)
 
@@ -81,8 +81,7 @@ Supported targets:
 For Android and iOS, first install [Expo Go](https://expo.dev/go) on your target device.
 NB: For Android, my preference is to install the APK directly by downloading from the above link then `adb install <app>.apk`
 
-All targets can be deployed to by running: `make run`.
-A `make run-dev` target is also provided to extend developer functionality.
+NB: First builds will be slower whilst the buildtools (Gradle et al) are setup and the cache is built.
 
 ### Android
 
@@ -93,8 +92,15 @@ First **Connect an Android Device** (or use an emulator):
 - If using an emulator, start it from the host machine (the DevContainer can reach it).
 - Make sure that you've installed Expo Go on your device.
 
-Then run `make run` to deploy.
+Then run `make run` to run using Expo.
 When prompted, press `a` to deploy to an Android device.
+
+A `make run-dev` target is also provided to extend developer functionality.
+
+Finally, you can build and deploy the full production with: `make deploy`.
+This will build the APK and deploy it to the connected device.
+When promted, press `a` to deploy to an Android device, or cancel to build the APK only without running.
+If you want the raw APK to install directly, it will be located at `android/app/build/outputs/apk/release/app-release.apk`.
 
 **Troubleshooting:**
 

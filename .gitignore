@@ -9,3 +9,6 @@ web-build/
 
 # Misc
 *.swp
+
+# Android build
+android/
