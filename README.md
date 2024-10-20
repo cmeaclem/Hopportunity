@@ -37,6 +37,10 @@ If you prefer not to use VSCode, you can instead entering the Dev Container from
 2. Inside the Container
    - Once inside the container, you can start developing using `npm`, `expo`, or `react-native` commands.
 
+### Tools
+
+A Makefile is provided to simplify common development tasks.
+From the CLI run `make help` to see a list of available targets.
 
 ## Deploying
 
