@@ -25,3 +25,11 @@ lint:
 .PHONY: format  ## Format the code
 format:
 	npm run format
+
+.PHONY: test  ## Run the tests
+test:
+	npm run test
+
+.PHONY: ci  ## Run the CI "pipeline"
+ci: lint test
+	@echo "CI pipeline completed successfully"
