@@ -8,4 +8,4 @@ docker run -it --rm \
   --mount type=bind,source=$(pwd),target=/workspace \
   --mount type=bind,source=/dev/bus/usb,target=/dev/bus/usb \
   -e ADB_SERVER_PORT=5037 \
-  react-native-dev-container
+  react-native-dev-container sh -c "cd /workspace"
